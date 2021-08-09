@@ -285,5 +285,14 @@ body {
   font-size: 20px;
   margin: 0 20px;
   text-align: left;
+  color: #797476;
+}
+
+.footer-link{
+  font-size: 20px;
   color: #ff512f;
+}
+
+.footer-link:hover {
+  text-decoration: underline !important;
 }
