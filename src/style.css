@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Body Section of the Page*/
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 5%;
+  overflow-x: hidden;
+  min-width: xxpx;
+}
+
+/*Clearing each section of the div closing tag*/
+.clear {
+  clear: both;
+}
+
+.weather-col-info {
+  /* background-color: salmon; */
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.weather-update {
+  background-image: url(../images/moon-clouds.jpeg);
+  border-radius: 8px 0 0 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-data {
+  background-color: #f2f2f2;
+  border-radius: 0 8px 8px 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.search-city {
+  display: block;
+  margin: 20px auto;
+}
+
+.city-placeholder {
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px 0 0 4px;
+  text-align: center;
+}
+
+.search-btn {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: none;
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    #ff512f,
+    #dd2476
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.weather-para {
+  margin: 20px;
+}
+
+.weather-date {
+  display: block;
+  margin: 0 auto;
+  padding-left: 60px;
+}
+
+.weather-time {
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-date-time {
+  display: inline;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.weather-day {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.weather-status {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.weather-image {
+  margin-top: 30px;
+  vertical-align: middle;
+  width: 35%;
+  object-fit: cover;
+  margin-left: 32%;
+}
+
+.weather-degree {
+  display: block;
+  margin: 50px auto;
+  padding: 45px;
+  text-align: center;
+  color: #fff;
+  font-size: 48px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+
+  background: linear-gradient(
+    to right,
+    #ff512f,
+    #dd2476
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.weather-city {
+  display: block;
+  font-size: 30px;
+  margin: 0 auto;
+  padding-left: 90px;
+  text-align: center;
+  color: #fff;
+  padding-top: 10px;
+}
+
+.weather-country {
+  display: block;
+  font-size: 30px;
+  margin: 0 auto;
+  padding-right: 25px;
+  text-align: center;
+  color: #fff;
+  padding-top: 10px;
+}
+
+.current-location {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 35px;
+}
+
+.weather-unit {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 20px;
+  padding-top: 20px;
+  color: #ff512f;
+  font-weight: normal;
+}
+
+.weather-timeline {
+  display: block;
+  margin: 0 auto;
+  font-size: 28px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.weather-time-icons {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 4px 4px 4px 4px;
+}
+
+.weather-img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 60px;
+}
+
+.weather-time-degrees {
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  color: #ff512f;
+}
+
+.weather-time-hour {
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #797476;
+}
+
+.weather-img-2 {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 40px;
+}
+
+.weather-highlight {
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  font-size: 28px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.weather-description {
+  display: block;
+  margin: 0 auto;
+  padding: 0 auto;
+  margin-bottom: 20px;
+  left: -20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 4px 4px 4px 4px;
+}
+
+.weather-types {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 20px;
+  color: #ff512f;
+}
+
+.weather-measure {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #797476;
+}
+
+.highlight-unit {
+  text-align: center;
+}
+
+.weather-bg {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: #fff;
+}
+
+.average-temperature {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.weather-img-3 {
+  display: block;
+  margin: 0 auto;
+  margin-right: 10px;
+  padding-top: 20px;
+  width: 60px;
+}
+
+.sunrise-sunset {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.footer-credits {
+  display: block;
+  font-size: 20px;
+  margin: 0 20px;
+  text-align: left;
+  color: #ff512f;
+}

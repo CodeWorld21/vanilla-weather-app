@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Homepage</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!--Axios Link-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!--FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/71fc1b7f26.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--CSS Link-->
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="weather-col-info">
+            <div class="row">
+              <div class="col-md-4 weather-update">
+                <form id="search-form">
+                  <div class="row">
+                    <div class="form-group mx-sm-3 mb-2 col-8 search-city">
+                      <label for="inputCity2" class="sr-only">City</label>
+                      <input
+                        type="search"
+                        class="form-control city-placeholder"
+                        id="city-input"
+                        autofocus="on"
+                        autocomplete="off"
+                        placeholder="Type a city..."
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      value="Search"
+                      class="btn btn-primary mx-sm-1 mb-2 col-2 search-btn"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
+
+                <div class="weather-para">
+                  <h2 class="weather-day" id="day">Wednesday</h2>
+                  <h2 class="weather-date-time weather-date" id="month">
+                    21st June 2021
+                  </h2>
+                  <h2 class="weather-date-time weather-time" id="time">
+                    | 13:30
+                  </h2>
+                  <h2 class="weather-status" id="description">Sunny</h2>
+                  <img
+                    class="weather-image"
+                    src=".//images/sun.png"
+                    alt="Sun"
+                  />
+
+                  <h1 class="weather-degree" id="weather-temperature">
+                    20&deg;
+                  </h1>
+                  <div class="row">
+                    <h1 class="weather-city" id="city">Dublin |</h1>
+                    <h1 class="weather-country" id="country">IE</h1>
+                    <div class="col-md-3">
+                      <button class="current-location" id="location-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 weather-data">
+                <h3 class="todays-weather">
+                  <a href="#" class="weather-unit" id="celsius-link">Celsius</a>
+                  <span class="weather-unit">|</span>
+                  <a href="#" class="weather-unit" id="fahrenheit-link">
+                    Farhenheit</a
+                  >
+                </h3>
+                <hr />
+                <h2 class="weather-timeline">Timeline</h2>
+                <br />
+                <div class="row weather-timeline-info">
+                  <div class="col-md-2 weather-time-icons">
+                    <img
+                      class="weather-img"
+                      src="./images/weather-icons/038-cloudy-3.png"
+                    />
+                    <h3 class="weather-time-degrees">18&deg;C</h3>
+                    <p class="weather-time-hour">09:00</p>
+                  </div>
+                  <div class="col-md-2 weather-time-icons">
+                    <img
+                      class="weather-img"
+                      src="./images/weather-icons/001-cloud.png"
+                    />
+                    <h3 class="weather-time-degrees">16&deg;C</h3>
+                    <p class="weather-time-hour">12:00</p>
+                  </div>
+                  <div class="col-md-2 weather-time-icons">
+                    <img
+                      class="weather-img"
+                      src="./images/weather-icons/003-rainy.png"
+                    />
+                    <h3 class="weather-time-degrees">20&deg;C</h3>
+                    <p class="weather-time-hour">15:00</p>
+                  </div>
+                  <div class="col-md-2 weather-time-icons">
+                    <img
+                      class="weather-img"
+                      src="./images/weather-icons/038-cloudy-3.png"
+                    />
+                    <h3 class="weather-time-degrees">22&deg;C</h3>
+                    <p class="weather-time-hour">18:00</p>
+                  </div>
+                  <div class="col-md-2 weather-time-icons">
+                    <img
+                      class="weather-img"
+                      src="./images/weather-icons/038-cloudy-3.png"
+                    />
+                    <h3 class="weather-time-degrees">18&deg;C</h3>
+                    <p class="weather-time-hour">21:00</p>
+                  </div>
+                </div>
+
+                <br />
+                <h2 class="weather-highlight">Today's Highlights</h2>
+                <br />
+
+                <div class="row highlight">
+                  <div class="col-md-4 weather-description">
+                    <h3 class="weather-types">Humidity</h3>
+                    <img
+                      class="weather-img-2"
+                      src="./images/weather-icons/025-humidity.png"
+                    />
+
+                    <p id="humidity" class="weather-measure">31%</p>
+                  </div>
+
+                  <div class="col-md-4 weather-description">
+                    <h3 class="weather-types">Pressure</h3>
+                    <img
+                      class="weather-img-2"
+                      src="./images/weather-icons/014-compass.png"
+                    />
+
+                    <p id="pressure" class="weather-measure">1020hPa</p>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-5 weather-description">
+                      <img
+                        class="weather-img-3"
+                        src="./images/weather-icons/042-cold.png"
+                      />
+                      <h3 id="temp-min" class="average-temperature">
+                        18&deg;C
+                      </h3>
+                    </div>
+                    <div class="col-md-5 weather-description weather-bg">
+                      <img
+                        class="weather-img-3"
+                        src="./images/weather-icons/044-warm-1.png"
+                      />
+                      <h3 id="temp-max" class="average-temperature">
+                        24&deg;C
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 weather-description">
+                    <h3 class="weather-types">Cloud Coverage</h3>
+                    <img
+                      class="weather-img-2"
+                      src="./images/weather-icons/011-cloudy.png"
+                    />
+
+                    <p id="cloud-coverage" class="weather-measure">100%</p>
+                  </div>
+
+                  <div class="col-md-4 weather-description">
+                    <h3 class="weather-types">Wind Speed</h3>
+                    <img
+                      class="weather-img-2"
+                      src="./images/weather-icons/030-wind.png"
+                    />
+
+                    <p id="wind" class="weather-measure">2 km/h</p>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-5 weather-description highlight-unit">
+                      <img
+                        class="weather-img-3"
+                        src="./images/weather-icons/040-sunrise.png"
+                      />
+                      <h3 class="sunrise-sunset">6:58</h3>
+                    </div>
+                    <div
+                      class="col-md-5 weather-description highlight-unit weather-bg"
+                    >
+                      <img
+                        class="weather-img-3"
+                        src="./images/weather-icons/041-sunset.png"
+                      />
+                      <h3 class="sunrise-sunset">9:48</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer-credits">Created by : 👩🏾‍💻 | Mary Ndonga</footer>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
