@@ -61,14 +61,22 @@ dateElement.innerHTML = formatDate(currentDate);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#weather-temperature");
-  temperatureElement.innerHTML = `68\u00B0`;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature) + `\u00B0`;
 }
+
+let celsiusTemperature = null;
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#weather-temperature");
-  temperatureElement.innerHTML = `20\u00B0`;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature) + `\u00B0`;
 }
+
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
@@ -87,7 +95,9 @@ function displayWeatherCondition(response) {
   let countryElement = document.querySelector("#country");
   countryElement.innerHTML = `${country}`;
 
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celsiusTemperature);
   let temperatureElement = document.querySelector("#weather-temperature");
   temperatureElement.innerHTML = `${temperature}°`;
 
