@@ -151,11 +151,11 @@ function displayWeatherCondition(response) {
   let tempMaxElement = document.querySelector("#temp-max");
   tempMaxElement.innerHTML = `${tempMax}°C`;
 
-  let sunRise = new Date(response.data.sys.sunrise * 1000).getHours() + ":00";
+  let sunRise = formatHours(response.data.sys.sunrise * 1000);
   let sunRiseElement = document.querySelector("#sunrise");
   sunRiseElement.innerHTML = `${sunRise}`;
 
-  let sunSet = new Date(response.data.sys.sunset * 1000).getHours() + ":00";
+  let sunSet = formatHours(response.data.sys.sunset * 1000);
   let sunSetElement = document.querySelector("#sunset");
   sunSetElement.innerHTML = `${sunSet}`;
 }
